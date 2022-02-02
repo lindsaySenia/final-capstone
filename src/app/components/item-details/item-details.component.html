@@ -1,0 +1,112 @@
+<div *ngIf="viewMode; else editable">
+    <div *ngIf="currentItem.id">
+      <h4>Item</h4>
+      <div>
+        <label><strong>Name:</strong></label> {{ currentItem.name }}
+      </div>
+      <div>
+        <label><strong>Brand:</strong></label>
+        {{ currentItem.brand }}
+      </div>
+      <div>
+        <label><strong>Type:</strong></label> {{ currentItem.type }}
+      </div>
+      <div>
+        <label><strong>Size:</strong></label>
+        {{ currentItem.size }}
+      </div>
+      <div>
+        <label><strong>Color:</strong></label>
+        {{ currentItem.color }}
+      </div>
+     
+  
+      <a
+        class="badge badge-warning"
+        routerLink="/items/{{ currentItem.id }}"
+      >
+        Edit
+      </a>
+    </div>
+  
+    <div *ngIf="!currentItem">
+      <br />
+      <p>Please choose an item...</p>
+    </div>
+  </div>
+  
+  <ng-template #editable>
+    <div *ngIf="currentItem.id" class="edit-form">
+      <h4>Tutorial</h4>
+      <form>
+        <div class="form-group">
+          <label for="title">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            [(ngModel)]="currentItem.name"
+            name="name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="brand">Brand</label>
+          <input
+            type="text"
+            class="form-control"
+            id="brand"
+            [(ngModel)]="currentItem.brand"
+            name="brand"
+          />
+        </div>
+        <div class="form-group">
+            <label for="type">Type</label>
+            <input
+              type="text"
+              class="form-control"
+              id="type"
+              [(ngModel)]="currentItem.type"
+              name="type"
+            />
+          </div>
+          <div class="form-group">
+            <label for="size">Size</label>
+            <input
+              type="text"
+              class="form-control"
+              id="size"
+              [(ngModel)]="currentItem.size"
+              name="size"
+            />
+          </div>
+          <div class="form-group">
+            <label for="color">Color</label>
+            <input
+              type="text"
+              class="form-control"
+              id="color"
+              [(ngModel)]="currentItem.color"
+              name="color"
+            />
+          </div>
+      </form>
+  
+      <button class="badge badge-danger mr-2" (click)="deleteItem()">
+        Delete
+      </button>
+  
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updateItem()"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentItem.id">
+      <br />
+      <p>Cannot access this item...</p>
+    </div>
+  </ng-template>
