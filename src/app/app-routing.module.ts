@@ -3,10 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddItemComponent } from './components/add-item/add-item.component';
 import { ItemDetailsComponent } from './components/item-details/item-details.component';
 import { ViewClosetComponent } from './components/view-closet/view-closet.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 const routes: Routes = [
   {
-    path: '', redirectTo: 'closets', pathMatch: 'full'
+    path: '', redirectTo: '/', pathMatch: 'full'
+  },
+  {
+    path: '', component: MainPageComponent
   },
   {
     path: 'items/:id', component: ItemDetailsComponent

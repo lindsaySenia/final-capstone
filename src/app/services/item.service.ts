@@ -17,7 +17,7 @@ export class ItemService {
     }
 
     public createItem(item: Item): Observable<Item> {
-        return this.http.post<Item>(`${this.apiServerUrl}/items/add`, item);
+        return this.http.post<Item>(`${this.apiServerUrl}/items`, item);
     }
 
 

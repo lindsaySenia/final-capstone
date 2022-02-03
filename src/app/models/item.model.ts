@@ -5,6 +5,6 @@ export class Item {
     type?: string;
     size?: string;
     color?: string;
-    closetId?: number;
+    imageUrl?: string;
 
 }

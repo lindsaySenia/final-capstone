@@ -18,11 +18,13 @@ export class ItemDetailsComponent implements OnInit {
     brand: '',
     type: '',
     size: '',
-    color: ''
+    color: '',
+    imageUrl: ''
   };
 
+  
   message = '';
-
+  image = '';
 
   constructor(
     private itemService: ItemService,
@@ -54,7 +56,7 @@ export class ItemDetailsComponent implements OnInit {
       .subscribe({
         next: (res) => {
           console.log(res);
-          this.message = 'This tutorial was updated successfully!';
+          this.message = `${this.currentItem.name} updated successfully!`;
         },
         error: (e) => console.error(e)
       });

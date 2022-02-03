@@ -15,7 +15,8 @@ export class AddItemComponent implements OnInit {
     brand: '',
     type: '',
     size: '',
-    color: ''
+    color: '',
+    imageUrl: ''
   };
   submitted = false;
   
@@ -32,7 +33,8 @@ export class AddItemComponent implements OnInit {
       brand: this.item.brand,
       type: this.item.type,
       size: this.item.size,
-      color: this.item.color
+      color: this.item.color,
+      imageUrl: this.item.imageUrl
     };
 
     this.itemService.createItem(data)
@@ -53,7 +55,8 @@ export class AddItemComponent implements OnInit {
       brand: '',
       type: '',
       size: '',
-      color: ''
+      color: '',
+      imageUrl: ''
     };
   }
 

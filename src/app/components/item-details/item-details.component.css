@@ -2,3 +2,8 @@
     max-width: 400px;
     margin: auto;
   }
+
+
+.item-image {
+  max-width: 200px;
+}
